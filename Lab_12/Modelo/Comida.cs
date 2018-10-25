@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Modelo
-{
+{   
     public class Comida
     {
         string Nombre;
