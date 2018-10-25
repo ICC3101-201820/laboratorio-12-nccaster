@@ -34,6 +34,14 @@ namespace Modelo
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("Miarchivo.bin", FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
             formatter.Serialize(stream, this.comidas);
+            stream.Close();
+        }
+        public void DeSerializeComida()
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("Miarchivo.bin", FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read);
+            ListaComida listaComida = (ListaComida)formatter.Deserialize(stream);
+            stream.Close();
         }
     }
 }
